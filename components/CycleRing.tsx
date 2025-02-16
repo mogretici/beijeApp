@@ -100,7 +100,7 @@ export default function CycleRing(
         <View
         >
             <Text
-                className='font-[Gordita] text-[#343131] font-black '
+                className='font-[Gordita] text-[#343131] '
                 style={{  textAlign: 'center', fontSize: 18 }}
             >
                 {currentDay} {currentMonthString}
