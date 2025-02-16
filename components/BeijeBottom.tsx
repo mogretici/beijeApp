@@ -29,6 +29,8 @@ function BeijeBottom(
             backgroundStyle={{ backgroundColor: '#f7f7f7' }}
             enableDynamicSizing={false}
             onChange={handleSheetChanges}
+            handleIndicatorStyle={{ backgroundColor: '#696969', opacity:0.2 }}
+
         >
             <BottomSheetView className='flex-1 mx-10 mt-5'>
                 <Text className='text-2xl font-[Gordita] font-medium'>Bugün Öne Çıkanlar</Text>
