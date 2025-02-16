@@ -35,7 +35,7 @@ export default function CycleScreen() {
                 >
                     <Text
                         color={'white'}
-                        className="text-xl mt-1 font-[Gordita] ">
+                        className="text-xl font-[Gordita] ">
                         {
                             (profile?.profileInfo.firstName)?.charAt(0).toUpperCase()
                         }
