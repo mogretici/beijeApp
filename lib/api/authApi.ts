@@ -1,9 +1,8 @@
 import { axiosPublic } from "@/lib/api/apiClient";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {setToken} from "@/lib/helpers/authHelpers";
+import {getToken, setToken} from "@/lib/helpers/authHelpers";
 
 export const loginUserApi = async (): Promise<string | null> => {
-    let token = await AsyncStorage.getItem("token");
+    let token = await getToken()
 
     if (!token) {
         const { data } = await axiosPublic.post<{ token: string }>("/sign-in-request", {

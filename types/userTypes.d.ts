@@ -31,6 +31,7 @@ declare global {
         menstruationDays: MenstruationDay[];
         insights: Insights[];
         loading: boolean;
+        selectedDay: MenstruationDay | null;
     }
 }
 

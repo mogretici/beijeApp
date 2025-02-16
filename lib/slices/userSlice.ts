@@ -8,13 +8,18 @@ const initialState: UserState = {
     menstruationDays: [],
     insights: [],
     loading: false,
+    selectedDay: null,
 };
 
 // **Redux Slice**
 const userSlice = createSlice({
     name: "user",
     initialState,
-    reducers: {},
+    reducers: {
+        setSelectedDay: (state, action: PayloadAction<MenstruationDay | null>) => {
+            state.selectedDay = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(loginUser.fulfilled, (state, action: PayloadAction<string | null>) => {
@@ -37,5 +42,5 @@ const userSlice = createSlice({
             });
     },
 });
-
+export const { setSelectedDay } = userSlice.actions;
 export default userSlice.reducer;

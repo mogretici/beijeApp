@@ -8,12 +8,13 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import "../global.css"
+import {GestureHandlerRootView} from "react-native-gesture-handler";
 
 SplashScreen.preventAutoHideAsync().then();
 
 export default function RootLayout() {
     const [loaded] = useFonts({
-        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+        Gordita: require('../assets/fonts/Gordita-Regular.otf'),
     });
 
     useEffect(() => {
@@ -27,6 +28,7 @@ export default function RootLayout() {
     }
 
     return (
+        <GestureHandlerRootView className='flex-1'>
         <Provider store={store}>
             <ThemeProvider value={DefaultTheme}>
                 <Stack screenOptions={{ headerShown: false }}>
@@ -36,5 +38,6 @@ export default function RootLayout() {
                 <StatusBar style="auto" />
             </ThemeProvider>
         </Provider>
+        </GestureHandlerRootView>
     );
 }

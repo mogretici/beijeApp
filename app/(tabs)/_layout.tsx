@@ -24,6 +24,8 @@ export default function TabLayout() {
                         tabBarLabel: 'Döngü',
                         tabBarLabelStyle: {
                             color: '#343131',
+                            fontFamily: 'Gordita',
+                            paddingTop: 2,
                         },
                         tabBarIcon: ({color, focused}) => (
                             <Image
@@ -41,6 +43,9 @@ export default function TabLayout() {
                         tabBarLabel: 'Takvim',
                         tabBarLabelStyle: {
                             color: '#b1b1b1',
+                            fontFamily: 'Gordita',
+                            paddingTop: 2,
+
                         },
                         tabBarIcon: ({color, focused}) => (
                             <Image
@@ -65,6 +70,9 @@ export default function TabLayout() {
                         tabBarLabel: 'Analiz',
                         tabBarLabelStyle: {
                             color: '#b1b1b1',
+                            fontFamily: 'Gordita',
+                            paddingTop: 2,
+
                         },
                         tabBarIcon: ({color, focused}) => (
                             <Image
@@ -89,6 +97,9 @@ export default function TabLayout() {
                         tabBarLabel: 'Rehber',
                         tabBarLabelStyle: {
                             color: '#b1b1b1',
+                            fontFamily: 'Gordita',
+                            paddingTop: 2,
+
                         },
                         tabBarIcon: ({color, focused}) => (
                             <Image

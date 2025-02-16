@@ -1,9 +1,23 @@
-import { Text, View, ImageBackground } from "react-native";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
+import { ImageBackground, Pressable} from "react-native";
+import CycleRing from "@/components/CycleRing";
+import React from "react";
+import BeijeBottom from "@/components/BeijeBottom";
+import {View,Text} from "react-native-ui-lib";
+import {RootState} from "@/lib/store";
+import {useSelector} from "react-redux";
+import {Image} from "expo-image";
 
 export default function CycleScreen() {
-    const { profile, loading } = useSelector((state: RootState) => state.user);
+    const [viewMode, setViewMode] = React.useState<'near' | 'far'>('far');
+    const [currentDay, setCurrentDay] = React.useState<number>(new Date().getDate());
+    const {profile} = useSelector((state: RootState) => state.user);
+    const toggleViewMode = (mode: 'near' | 'far') => {
+        setViewMode(mode);
+    };
+
+    const toggleCurrentDay = (day: number) => {
+        setCurrentDay(day);
+    }
 
     return (
         <ImageBackground
@@ -11,25 +25,43 @@ export default function CycleScreen() {
             className="flex flex-1 items-center justify-center"
             resizeMode="cover"
         >
-            {profile ?
-                <View className="flex flex-1 items-center justify-center ">
-                    <>
-                        <Text className="text-lg font-bold text-black">Cycle Screen</Text>
-                            <View className="mt-4 bg-white/80 p-4 rounded-lg">
-                                <Text className="text-md text-gray-900">
-                                    Ad: {profile.profileInfo.firstName} {profile.profileInfo.lastName}
-                                </Text>
-                                <Text className="text-md text-gray-900">
-                                    E-posta: {profile.profileInfo.email}
-                                </Text>
-                                <Text className="text-md text-gray-900">
-                                    Doğum Tarihi: {profile.profileInfo.birthDate}
-                                </Text>
-                            </View>
-                    </>
+            <Pressable
+                style={{ flex: 1,height: '100%', width: '100%', alignItems: 'center', justifyContent: 'space-between', paddingTop: 70,marginBottom: 250 }}
+                onPress={() => toggleViewMode('far')}
+            >
+            <View className={`flex flex-row items-center justify-between ml-10 w-full pl-2 `}>
+                <View
+                 className='flex rounded-full bg-bleeding/70 w-10 h-10 items-center justify-center'
+                >
+                    <Text
+                        color={'white'}
+                        className="text-xl mt-1 font-[Gordita] ">
+                        {
+                            (profile?.profileInfo.firstName)?.charAt(0).toUpperCase()
+                        }
+
+                    </Text>
+                </View>
+                <View
+                    className='flex rounded-full bg-white w-10 h-10 mr-10 items-center justify-center'
+                >
+                    <Image
+                        source={require('../../assets/icons/notify-icon.png')}
+                        style={{ width: 16, height: 20 }}
+                    />
+                </View>
             </View>
-            : loading ? <Text className="text-lg font-bold text-white">Loading...</Text> : null
-            }
+                <CycleRing
+                    currentDay={currentDay}
+                    toggleCurrentDay={toggleCurrentDay}
+                    viewMode={viewMode}
+                    toggleViewMode={toggleViewMode} />
+            </Pressable>
+            <BeijeBottom
+                currentDay={currentDay}
+                toggleViewMode={toggleViewMode}
+                viewMode={viewMode}
+            />
         </ImageBackground>
     );
 }
