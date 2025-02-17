@@ -8,7 +8,7 @@ import {
     RadialGradient,
     Stop, Circle,
 } from 'react-native-svg';
-import {Text, View} from "react-native-ui-lib";
+import {View} from "react-native-ui-lib";
 import Animated, {useAnimatedStyle, useSharedValue, withTiming} from "react-native-reanimated";
 
 interface EllipseOverride {
@@ -355,8 +355,6 @@ const CircularPicker: React.FC<CustomSvgProps> = ({
     React.useEffect(() => {
         rotateValue.value = withTiming((-360 / 29.5) * (currentDay - 1), { duration: 300 });
     }, [currentDay]);
-
-    console.log(currentDay)
 
     const animatedStyle = useAnimatedStyle(() => ({
         transform: [{ rotate: `${rotateValue.value}deg` }]
