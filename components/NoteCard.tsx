@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View} from "react-native-ui-lib";
-import {Text} from "react-native";
+import {Text,View} from "react-native";
 import {useSelector} from "react-redux";
 import {RootState} from "@/lib/store";
 

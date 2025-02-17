@@ -1,8 +1,7 @@
-import { View } from 'react-native';
+import { View,Text } from 'react-native';
 import CircularCyclePicker from "@/components/CircularPicker";
 import {useDispatch, useSelector} from "react-redux";
 import { RootState } from "@/lib/store";
-import { Text } from "react-native-ui-lib";
 import React, {useEffect} from "react";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import {Image} from "expo-image";

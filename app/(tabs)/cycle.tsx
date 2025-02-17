@@ -2,7 +2,7 @@ import { ImageBackground, Pressable} from "react-native";
 import CycleRing from "@/components/CycleRing";
 import React from "react";
 import BeijeBottom from "@/components/BeijeBottom";
-import {View,Text} from "react-native-ui-lib";
+import {View,Text} from "react-native";
 import {RootState} from "@/lib/store";
 import {useSelector} from "react-redux";
 import {Image} from "expo-image";
@@ -34,8 +34,7 @@ export default function CycleScreen() {
                  className='flex rounded-full bg-bleeding/70 w-10 h-10 items-center justify-center'
                 >
                     <Text
-                        color={'white'}
-                        className="text-xl font-[Gordita] ">
+                        className="text-xl text-white font-[Gordita] ">
                         {
                             (profile?.profileInfo.firstName)?.charAt(0).toUpperCase()
                         }

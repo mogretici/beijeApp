@@ -9,7 +9,7 @@ import {
     Stop,
     Circle,
 } from 'react-native-svg';
-import { View } from 'react-native-ui-lib';
+import { View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { TouchableOpacity, ViewStyle } from 'react-native';
 
