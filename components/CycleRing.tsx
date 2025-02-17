@@ -31,8 +31,8 @@ export default function CycleRing(
     useEffect(() => {
 
         if (viewMode === 'near') {
-            scaleValue.value = withTiming(2.4, { duration: 300 });
-            marginTopValue.value = withTiming(190, { duration: 300 });
+            scaleValue.value = withTiming(2.2, { duration: 300 });
+            marginTopValue.value = withTiming(170, { duration: 300 });
         } else {
             scaleValue.value = withTiming(1, { duration: 300 });
             marginTopValue.value = withTiming(0, { duration: 300 });

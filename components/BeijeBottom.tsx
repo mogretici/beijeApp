@@ -24,7 +24,7 @@ function BeijeBottom(
     return (
         <BottomSheet
             ref={bottomSheetRef}
-            snapPoints={['17%', '60%']}
+            snapPoints={['17%', '55%']}
             index={viewMode === 'near' ? 1 : 0}
             backgroundStyle={{ backgroundColor: '#f7f7f7' }}
             enableDynamicSizing={false}
