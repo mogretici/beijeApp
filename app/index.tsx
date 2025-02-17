@@ -49,7 +49,7 @@ export default function SplashScreen() {
                 />
             </View>
 
-            <Image source={require("../assets/logo.png")} className="bottom-20 w-20 h-8 object-contain" />
+            <Image source={require("../assets/images/logo.png")} className="bottom-20 w-20 h-8 object-contain" />
         </View>
     );
 }

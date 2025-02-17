@@ -10,14 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mogretici.beijeApp"
+      "bundleIdentifier": "com.mogretici.beijeApp",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/adaptive-icon.png"
       },
-      "package": "com.mogretici.beijeApp"
+      "package": "com.mogretici.beijeApp",
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",
