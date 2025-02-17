@@ -25,7 +25,7 @@ export default function TabLayout() {
                         tabBarLabelStyle: {
                             color: '#343131',
                             fontFamily: 'Gordita',
-                            paddingTop: 2,
+                            paddingTop: 1,
                         },
                         tabBarIcon: ({color, focused}) => (
                             <Image
@@ -34,6 +34,13 @@ export default function TabLayout() {
                                 contentFit="contain"
                                 transition={1000}
                             />
+                        ),
+                        tabBarButton: (props) => (
+                            <View {...props} pointerEvents="none">
+                                <TouchableOpacity activeOpacity={1}>
+                                    {props.children}
+                                </TouchableOpacity>
+                            </View>
                         ),
                     }}
                 />
